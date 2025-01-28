@@ -1,20 +1,16 @@
-﻿// zadanie domowe dzień 4
+﻿// Zadanie domowe dzień 5
 
-using System.ComponentModel.Design;
+int number = 20010701;
+string numberInString = number.ToString();
+char[] letters = numberInString.ToArray();
+int[] digits = new int[10];
 
-var name = "Magda";
-var sex = "female";
-var age = 29;
-
-if (sex == "female" && age < 30)
+foreach (var letter in letters)
 {
-    Console.WriteLine("Kobieta poniżej 30 lat");
+    digits[letter - '0'] += 1;
 }
-else if (name == "Ewa" && age == 30)
+
+for (int i = 0; i < digits.Length; i++)
 {
-    Console.WriteLine("Ewa, lat 30");
-}
-else if (sex == "male" && age < 18)
-{
-    Console.WriteLine("Niepełnoletni mężczyzna");
+    Console.WriteLine(i.ToString() + " => " + digits[i]);
 }
